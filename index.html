@@ -12,301 +12,635 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
         }
 
         /* Header & Navigation */
         header {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.2rem 3rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2563eb;
+        .logo-image {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0066cc;
+            letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
         }
 
         nav a:hover {
-            color: #2563eb;
+            color: #0066cc;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(0,102,204,0.9) 0%, rgba(0,73,153,0.9) 100%),
+                        url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 6rem 2rem;
+            padding: 8rem 3rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            font-weight: 400;
         }
 
         .cta-button {
             display: inline-block;
             background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
+            color: #0066cc;
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            background: #f8f9fb;
+            padding: 3rem 3rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* Sections */
         section {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 6rem 3rem;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
             text-align: center;
-            color: #2563eb;
+            color: #1a1a1a;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .service-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            border-color: #0066cc;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
         }
 
         .service-card h3 {
-            color: #2563eb;
+            color: #0066cc;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .service-highlight {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.9rem;
+            color: #0066cc;
+            font-weight: 500;
+        }
+
+        /* Case Studies */
+        #impact {
+            background: #f8f9fb;
+        }
+
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .case-study {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-content {
+            padding: 2rem;
+        }
+
+        .case-tag {
+            display: inline-block;
+            background: #e6f0ff;
+            color: #0066cc;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .case-study h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .case-study p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-result {
+            background: #f8f9fb;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .case-result strong {
+            color: #0066cc;
+            font-weight: 600;
         }
 
         /* About Section */
         .about {
-            background: #f8f9fa;
-        }
-
-        /* Contact Form */
-        .contact {
             background: white;
         }
 
-        form {
-            max-width: 600px;
-            margin: 0 auto;
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto 4rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .about-intro {
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 3rem;
             font-weight: 500;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        textarea {
-            min-height: 150px;
-            resize: vertical;
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0066cc;
         }
 
-        button {
-            background: #2563eb;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        /* Projects Section */
-        .projects-grid {
+        .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .project-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .project-content {
+        .expertise-item {
+            text-align: center;
             padding: 1.5rem;
         }
 
-        .project-content h3 {
-            color: #2563eb;
-            margin-bottom: 0.5rem;
+        .expertise-item h4 {
+            color: #0066cc;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+        .expertise-item ul {
+            list-style: none;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
         }
 
-        .project-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .project-link:hover {
-            background: #1d4ed8;
-        }
-
-        /* Social Links Section */
+        /* Social Links */
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 4rem;
             flex-wrap: wrap;
         }
 
         .social-card {
             background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 2rem;
-            width: 250px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            width: 280px;
             text-align: center;
-            transition: border-color 0.3s, transform 0.3s;
+            transition: all 0.3s ease;
         }
 
         .social-card:hover {
-            border-color: #2563eb;
-            transform: translateY(-3px);
+            border-color: #0066cc;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
 
         .social-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.2rem;
+            display: block;
         }
 
         .social-card h3 {
             margin-bottom: 1rem;
-            color: #333;
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .social-card a {
             display: inline-block;
-            color: #2563eb;
+            color: #0066cc;
             text-decoration: none;
             font-weight: 500;
+            font-size: 1rem;
         }
 
         .social-card a:hover {
             text-decoration: underline;
         }
 
+        /* Contact Form */
+        .contact {
+            background: #f8f9fb;
+        }
+
+        form {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #004999;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+        }
+
         /* Footer */
         footer {
-            background: #1f2937;
-            color: white;
+            background: #1a1a1a;
+            color: #999;
             text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Drive Section */
+        .drive-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 6rem 3rem;
+        }
+
+        .drive-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .drive-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .drive-intro {
+            text-align: center;
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-year {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0066cc;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .timeline-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1rem;
+        }
+
+        .drive-stat {
+            background: rgba(0,102,204,0.2);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #0066cc;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .drive-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .principle {
+            background: rgba(255,255,255,0.05);
             padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .principle h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .principle p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding: 5rem 2rem;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
             }
 
             nav ul {
+                gap: 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+
+            .drive-principles {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -315,11 +649,15 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Dobie Insights & Solutions</div>
+            <!-- Replace with your logo image once you have it -->
+            <img src="images/logo.png" alt="Dobie Insights & Solutions" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-text" style="display:none;">Dobie Insights & Solutions</div>
+            
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#drive">Drive</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -328,120 +666,229 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Dobie Insights & Solutions</h1>
-        <p>We take the analytical rigor required to deeply understand nuanced business problems and decades of experience implementing tailored solutions to guide projcets from insights to solutions. An AI model can describe a great plan, we do the hard part which is help generate buy in within the organization and see the change through. </p>
-        <a href="#contact" class="cta-button">Get a Proposal</a>
+        <div class="hero-content">
+            <h1>From Insights to Impact</h1>
+            <p>Transforming complex data into strategies that drive measurable results. I'm equally comfortable building sophisticated analytics models and presenting outcomes to C-suite executives.</p>
+            <a href="#contact" class="cta-button">Let's Talk</a>
+        </div>
     </section>
+
+    <!-- Stats Banner -->
+    <div class="stats-banner">
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-number">6+</div>
+                <div class="stat-label">Years Driving Strategic Outcomes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$14M+</div>
+                <div class="stat-label">In Documented Client Savings</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Average Efficiency Improvement</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Cross-Functional Team Members Led</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Services Section -->
     <section id="services">
-        <h2>Services</h2>
+        <h2>What I Do</h2>
+        <p class="section-subtitle">Strategic consulting that bridges analytics, product development, and organizational change</p>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Data Analytics</h3>
-                <p>Deep analysis of messy data.</p>
+                <img src="images/analytics-icon.png" alt="Analytics" class="service-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%230066cc%22 stroke-width=%222%22%3E%3Cline x1=%2218%22 y1=%2220%22 x2=%2218%22 y2=%2210%22%3E%3C/line%3E%3Cline x1=%2212%22 y1=%2220%22 x2=%2212%22 y2=%224%22%3E%3C/line%3E%3Cline x1=%226%22 y1=%2220%22 x2=%226%22 y2=%2214%22%3E%3C/line%3E%3C/svg%3E';">
+                <h3>Data & Analytics Strategy</h3>
+                <p>Turn messy data into clear insights that drive decision-making. From SQL queries to executive dashboards, I build analytics infrastructure that scales with your business needs.</p>
+                <div class="service-highlight">Recent: Increased product velocity 50% through data-driven workflow optimization</div>
             </div>
             <div class="service-card">
-                <h3>Strategy Development</h3>
-                <p>Description of your second service. Highlight what makes you different.</p>
+                <img src="images/product-icon.png" alt="Product Development" class="service-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%230066cc%22 stroke-width=%222%22%3E%3Crect x=%223%22 y=%223%22 width=%2218%22 height=%2218%22 rx=%222%22/%3E%3Cpath d=%22M9 3v18%22/%3E%3Cpath d=%22M15 3v18%22/%3E%3Cpath d=%22M3 9h18%22/%3E%3Cpath d=%22M3 15h18%22/%3E%3C/svg%3E';">
+                <h3>Product & Platform Development</h3>
+                <p>Lead end-to-end product development from requirements to launch. Specializing in internal tools, CMS platforms, and customer-facing features that improve user experience and operational efficiency.</p>
+                <div class="service-highlight">Recent: Cut training time 75% through intuitive UI/UX design</div>
             </div>
             <div class="service-card">
-                <h3>Implementation</h3>
-                <p>Description of your third service. Show your expertise and experience.</p>
+                <img src="images/implementation-icon.png" alt="Implementation" class="service-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%230066cc%22 stroke-width=%222%22%3E%3Cpolyline points=%2222 12 18 12 15 21 9 3 6 12 2 12%22%3E%3C/polyline%3E%3C/svg%3E';">
+                <h3>Change Management & Implementation</h3>
+                <p>Guide organizations through complex transformations. I don't just hand off recommendations—I partner with teams to drive adoption, align stakeholders, and ensure lasting results.</p>
+                <div class="service-highlight">Recent: Led 250-person transition to automated fulfillment, delivering multimillion-dollar savings</div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">Project Screenshot</div>
-                <div class="project-content">
-                    <h3>Project Name 1</h3>
-                    <p>Brief description of your project. What problem does it solve? What technologies did you use?</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link" target="_blank">Live Demo</a>
-                        <a href="#" class="project-link" target="_blank">GitHub</a>
+    <!-- Impact Section -->
+    <section id="impact">
+        <h2>Proven Results</h2>
+        <p class="section-subtitle">Real projects that delivered measurable business impact</p>
+        <div class="case-studies">
+            <div class="case-study">
+                <img src="images/case-ecommerce.jpg" alt="E-commerce platform" class="case-image" onerror="this.style.display='none';">
+                <div class="case-content">
+                    <span class="case-tag">E-commerce</span>
+                    <h3>Publishing Platform Transformation</h3>
+                    <p>Executed a two-year roadmap spanning content management, data warehousing, and website infrastructure for a catalog of 800k+ products.</p>
+                    <div class="case-result">
+                        <strong>Impact:</strong> 50% increase in publishing velocity, 2% lift in add-to-order rates, 1.8-click reduction per successful search
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-image">Project Screenshot</div>
-                <div class="project-content">
-                    <h3>Project Name 2</h3>
-                    <p>Brief description of your project. Highlight key features and your role in development.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link" target="_blank">Live Demo</a>
-                        <a href="#" class="project-link" target="_blank">GitHub</a>
+            <div class="case-study">
+                <img src="images/case-operations.jpg" alt="Warehouse operations" class="case-image" onerror="this.style.display='none';">
+                <div class="case-content">
+                    <span class="case-tag">Operations</span>
+                    <h3>Inventory Optimization Model</h3>
+                    <p>Built five-year growth forecasting models to optimize warehouse space utilization and strategic item placement across distribution centers.</p>
+                    <div class="case-result">
+                        <strong>Impact:</strong> Avoided $800K in planned capital expenditures while maintaining service levels
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-image">Project Screenshot</div>
-                <div class="project-content">
-                    <h3>Project Name 3</h3>
-                    <p>Brief description of your project. Explain the impact and results achieved.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link" target="_blank">Live Demo</a>
-                        <a href="#" class="project-link" target="_blank">GitHub</a>
+            <div class="case-study">
+                <img src="images/case-procurement.jpg" alt="Procurement strategy" class="case-image" onerror="this.style.display='none';">
+                <div class="case-content">
+                    <span class="case-tag">Procurement</span>
+                    <h3>Strategic Sourcing Initiative</h3>
+                    <p>Designed and executed data-driven sourcing strategy for $80M in indirect spend, creating category management roadmaps informed by analytical insights.</p>
+                    <div class="case-result">
+                        <strong>Impact:</strong> Delivered $14M in measurable savings with improved vendor management and contract compliance
+                    </div>
+                </div>
+            </div>
+            <div class="case-study">
+                <img src="images/case-technology.jpg" alt="Technology platform" class="case-image" onerror="this.style.display='none';">
+                <div class="case-content">
+                    <span class="case-tag">Technology</span>
+                    <h3>SaaS Platform Implementation</h3>
+                    <p>Owned end-to-end deployment of enterprise procurement platform, translating stakeholder needs into functional requirements and driving user adoption.</p>
+                    <div class="case-result">
+                        <strong>Impact:</strong> Successfully onboarded 35 users with 95%+ adoption rate through targeted training
+                    </div>
+                </div>
+            </div>
+            <div class="case-study">
+                <img src="images/case-quality.jpg" alt="Quality improvement" class="case-image" onerror="this.style.display='none';">
+                <div class="case-content">
+                    <span class="case-tag">Quality</span>
+                    <h3>Credit Rate Reduction Program</h3>
+                    <p>Analyzed 12 months of sales data using SQL and Python to identify root causes of customer credits, then implemented process improvements across five departments.</p>
+                    <div class="case-result">
+                        <strong>Impact:</strong> Reduced non-attributable credit rates by 50% through data-driven process changes
+                    </div>
+                </div>
+            </div>
+            <div class="case-study">
+                <img src="images/case-ux.jpg" alt="User experience optimization" class="case-image" onerror="this.style.display='none';">
+                <div class="case-content">
+                    <span class="case-tag">User Experience</span>
+                    <h3>A/B Testing & Page Optimization</h3>
+                    <p>Refined website routing logic based on customer search and order history patterns, validated improvements through rigorous A/B testing methodology.</p>
+                    <div class="case-result">
+                        <strong>Impact:</strong> 2% increase in add-to-order conversion with measurably improved user experience
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Drive Section -->
+    <section class="drive-section" id="drive">
+        <div class="drive-content">
+            <h2>Differentiators</h2>
+            <p class="drive-intro">Most consultants talk about excellence. I live it—simultaneously, relentlessly, and without compromise.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2015-2019</div>
+                    <div class="timeline-content">
+                        <h3>University of Chicago</h3>
+                        <p><strong>2-Sport Varsity Athlete</strong> while earning a BA in Public Policy with Honors and making Dean's List</p>
+                        <div class="drive-stat">Balanced 30+ hours/week of training and competition with rigorous academics</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021-2025</div>
+                    <div class="timeline-content">
+                        <h3>While Working Full-Time</h3>
+                        <p><strong>Earned Two Graduate Degrees</strong> from top programs while driving organization changing initiatives at McMaster-Carr</p>
+                        <div class="drive-stat">MS from Cornell (2023) • MBA from Northwestern Kellogg (2025) • Multiple promotions</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="drive-principles">
+                <div class="principle">
+                    <h4>🚀 Relentless Drive</h4>
+                    <p>I don't settle for "good enough." I push myself and my teams to exceed expectations and deliver exceptional results.</p>
+                                    </div>
+                <div class="principle">
+                    <h4>📚 Continuous Learning</h4>
+                    <p>I don't wait for permission to learn new skills. If a project needs it, I acquire it.</p>
+                </div>
+                <div class="principle">
+                    <h4>🎯 Execution Over Excuses</h4>
+                    <p>I don't present problems without solutions. I figure it out and get it done.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  would be interesting to add in something about small town to world class institutes. Persepctive and drive to get things over the finish line. 
+      
+    would be cool to add clifton strengths section (I think)
+    
+    what is the story of me, yano. how to display that on a page. what do i want you to know about me. I am going to get an excellent outcome. I am super smart. I am a hard worker. I am reliable. I have integrity-->
 
     <!-- About Section -->
     <section class="about" id="about">
-        <h2>About Us</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-            Tell your company's story here. Share your mission, values, and what makes you unique.
-            Explain why clients should choose you and what experience you bring to the table.
-        </p>
+
+            
+            <!-- Optional: Add profile photo -->
+            <div class="profile-section">
+                <img src="images/profile-photo.png" alt="Jonathon Dobie" class="profile-photo" onerror="this.style.display='none';">
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Python, SQL, R</li>
+                        <li>Tableau, Power BI, Looker</li>
+                        <li>Machine Learning & NLP</li>
+                        <li>Data Warehousing</li>
+                    </ul>
+                </div>
+                <div class="expertise-item">
+                    <h4>Product & Strategy</h4>
+                    <ul>
+                        <li>Product Lifecycle Management</li>
+                        <li>UX/UI Design</li>
+                        <li>Agile Methodologies</li>
+                        <li>Requirements Building</li>
+                    </ul>
+                </div>
+                <div class="expertise-item">
+                    <h4>Leadership</h4>
+                    <ul>
+                        <li>Cross-Functional Teams</li>
+                        <li>Change Management</li>
+                        <li>Stakeholder Alignment</li>
+                        <li>KPI Design & Tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <!-- Social Links -->
         <div class="social-links">
             <div class="social-card">
-                <div class="social-icon">💼</div>
+                <img src="images/linkedin-icon.png" alt="LinkedIn" class="social-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22 viewBox=%220 0 24 24%22 fill=%22%230066cc%22%3E%3Cpath d=%22M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z%22/%3E%3C/svg%3E';">
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/jonathon-dobie" target="_blank">View Profile</a>
+                <a href="https://linkedin.com/in/jonathon-dobie" target="_blank">Connect With Me</a>
             </div>
             <div class="social-card">
-                <div class="social-icon">💻</div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/jdobie11" target="_blank">View Repositories</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Request a Proposal</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company">
-            </div>
-            <div class="form-group">
-                <label for="message">Project Details *</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit">Send Proposal Request</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Your Company Name. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+                <img src="images/github-icon.png" alt="GitHub" class="social-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22 viewBox=%220 0 24 24%22 fill=%22%230066cc%22%3E%3Cpath d=%22M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z%22/%3E%3C/svg%3E';"
