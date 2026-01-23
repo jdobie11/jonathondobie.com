@@ -5,644 +5,747 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dobie Insights & Solutions</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #ffffff;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 3rem;
-        }
-
-        .logo-image {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #0066cc;
-            letter-spacing: -0.5px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4a4a4a;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-            letter-spacing: 0.3px;
-        }
-
-        nav a:hover {
-            color: #0066cc;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0,102,204,0.9) 0%, rgba(0,73,153,0.9) 100%),
-                        url('images/hero-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 8rem 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            opacity: 0.95;
-            font-weight: 400;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #0066cc;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Stats Banner */
-        .stats-banner {
-            background: #f8f9fb;
-            padding: 3rem 3rem;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .stats-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat {
-            padding: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0066cc;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Sections */
-        section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 6rem 3rem;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: #1a1a1a;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 4rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: #ffffff;
-            padding: 3rem 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #e8e8e8;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-            border-color: #0066cc;
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1.5rem;
-            object-fit: contain;
-        }
-
-        .service-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .service-card p {
-            color: #555;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .service-highlight {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e8e8e8;
-            font-size: 0.9rem;
-            color: #0066cc;
-            font-weight: 500;
-        }
-
-        /* Case Studies */
-        #impact {
-            background: #f8f9fb;
-        }
-
-        .case-studies {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .case-study {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-        }
-
-        .case-study:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
-        .case-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .case-content {
-            padding: 2rem;
-        }
-
-        .case-tag {
-            display: inline-block;
-            background: #e6f0ff;
-            color: #0066cc;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .case-study h3 {
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .case-study p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .case-result {
-            background: #f8f9fb;
-            padding: 1.2rem;
-            border-radius: 8px;
-            border-left: 3px solid #0066cc;
-        }
-
-        .case-result strong {
-            color: #0066cc;
-            font-weight: 600;
-        }
-
-        /* About Section */
-        .about {
-            background: white;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-        }
-
-        .about-intro {
-            text-align: center;
-            font-size: 1.25rem;
-            line-height: 1.9;
-            color: #333;
-            margin-bottom: 3rem;
-            font-weight: 500;
-        }
-
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #0066cc;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .expertise-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .expertise-item h4 {
-            color: #0066cc;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .expertise-item ul {
-            list-style: none;
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .social-card {
-            background: white;
-            border: 2px solid #e8e8e8;
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            width: 280px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-card:hover {
-            border-color: #0066cc;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.2rem;
-            display: block;
-        }
-
-        .social-card h3 {
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .social-card a {
-            display: inline-block;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .social-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Form */
-        .contact {
-            background: #f8f9fb;
-        }
-
-        form {
-            max-width: 650px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.6rem;
-            font-weight: 500;
-            color: #333;
-            font-size: 0.95rem;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.9rem;
-            border: 2px solid #e8e8e8;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #0066cc;
-        }
-
-        textarea {
-            min-height: 160px;
-            resize: vertical;
-        }
-
-        button {
-            background: #0066cc;
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        button:hover {
-            background: #004999;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #999;
-            text-align: center;
-            padding: 2.5rem;
-            font-size: 0.9rem;
-        }
-
-        /* Drive Section */
-        .drive-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 6rem 3rem;
-        }
-
-        .drive-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .drive-section h2 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .drive-intro {
-            text-align: center;
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 4rem;
-            font-weight: 400;
-        }
-
-        .timeline {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .timeline-year {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0066cc;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: white;
-        }
-
-        .timeline-content p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 1rem;
-        }
-
-        .drive-stat {
-            background: rgba(0,102,204,0.2);
-            padding: 1rem;
-            border-radius: 6px;
-            border-left: 3px solid #0066cc;
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .drive-principles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .principle {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .principle h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .principle p {
-            color: rgba(255,255,255,0.8);
-            line-height: 1.7;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero {
-                padding: 5rem 2rem;
-            }
-
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            nav ul {
-                gap: 1.5rem;
-                font-size: 0.85rem;
-            }
-
-            section {
-                padding: 4rem 2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .profile-section {
-                flex-direction: column;
-            }
-
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .drive-principles {
-                grid-template-columns: 1fr;
-            }
-        }
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0066cc;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+}
+
+nav a:hover {
+    color: #0066cc;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(0,102,204,0.9) 0%, rgba(0,73,153,0.9) 100%),
+                url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 8rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #0066cc;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Stats Banner */
+.stats-banner {
+    background: #f8f9fb;
+    padding: 3rem 3rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.stats-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.stat {
+    padding: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0066cc;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Sections */
+section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    border-color: #0066cc;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+}
+
+.service-card h3 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.service-highlight {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e8e8e8;
+    font-size: 0.9rem;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* Case Studies */
+#impact {
+    background: #f8f9fb;
+}
+
+.case-studies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.case-study {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.case-study:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.case-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.case-content {
+    padding: 2rem;
+}
+
+.case-tag {
+    display: inline-block;
+    background: #e6f0ff;
+    color: #0066cc;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.case-study h3 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.case-study p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.case-result {
+    background: #f8f9fb;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 3px solid #0066cc;
+}
+
+.case-result strong {
+    color: #0066cc;
+    font-weight: 600;
+}
+
+/* About Section */
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+}
+
+.about-intro {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0066cc;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.expertise-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.expertise-item h4 {
+    color: #0066cc;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.expertise-item ul {
+    list-style: none;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    background: white;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    width: 280px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover {
+    border-color: #0066cc;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.2rem;
+    display: block;
+}
+
+.social-card h3 {
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.social-card a {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.social-card a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form */
+.contact {
+    background: #f8f9fb;
+}
+
+form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+button {
+    background: #0066cc;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background: #004999;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: #999;
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   DRIVE SECTION - MODERNIZED
+   ======================================== */
+
+.drive-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 6rem 3rem;
+}
+
+.drive-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.drive-section h2 {
+    color: white;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.drive-intro {
+    text-align: center;
+    font-size: clamp(1.125rem, 2vw, 1.3rem);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 4rem;
+    font-weight: 400;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Icon Badges */
+.icon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(74, 158, 255, 0.08);
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.8125rem;
+    color: #4a9eff;
+    font-weight: 500;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+.icon-badge svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+/* Differentiators Grid */
+.differentiators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 28px;
+    margin-bottom: 80px;
+}
+
+.differentiator-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 36px 32px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.differentiator-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #4a9eff 0%, #7b68ee 100%);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.differentiator-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.15);
+    background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.differentiator-card:hover::before {
+    transform: scaleY(1);
+}
+
+.differentiator-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.differentiator-card > p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #b8b8b8;
+    margin-bottom: 20px;
+}
+
+.client-impact {
+    background: rgba(74, 158, 255, 0.06);
+    border-left: 3px solid #4a9eff;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #d8d8d8;
+    font-weight: 500;
+}
+
+/* Approach Principles Section */
+.approach-principles {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 56px 48px;
+}
+
+.approach-principles > h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    letter-spacing: -0.01em;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.principle {
+    position: relative;
+    padding-left: 24px;
+}
+
+.principle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #4a9eff 0%, #7b68ee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(74, 158, 255, 0.4);
+}
+
+.principle h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.principle p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #a0a0a0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero {
+        padding: 5rem 2rem;
+    }
+
+    nav {
+        padding: 1rem 1.5rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 4rem 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .profile-section {
+        flex-direction: column;
+    }
+
+    .differentiators-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .differentiator-card {
+        padding: 28px 24px;
+    }
+
+    .approach-principles {
+        padding: 40px 28px;
+    }
+
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .differentiators-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
     </style>
 </head>
 <body>
@@ -796,57 +899,112 @@
         </div>
     </section>
 
- <!-- Drive Section -->
-<section class="drive-section" id="drive">
-    <div class="drive-content">
-        <h2>Differentiators</h2>
-        <p class="drive-intro">Some talk about grit. I built mine—through competition, constraint, and commitment.</p>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-year">2015–2019</div>
-                <div class="timeline-content">
-                    <h3>University of Chicago</h3>
-                    <p><strong>Two-Sport Varsity Athlete</strong> competing at the collegiate level while earning a B.A. in Public Policy with honors and consistent Dean’s List recognition.</p>
-                    <div class="drive-stat">Balanced 30+ hours per week of training and travel with a top-three national academic program.</div>
+    <section class="drive-section" id="drive">
+        <div class="drive-content">
+            <h2>What Sets Me Apart</h2>
+            <p class="drive-intro">I don't just analyze problems—I solve them. My approach is shaped by delivering under pressure, learning rapidly, and driving results in complex environments.</p>
+            
+            <div class="differentiators-grid">
+                <div class="differentiator-card">
+                    <h3>Execution Under Constraint</h3>
+                    <div class="badges-container">
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                            </svg>
+                            UChicago
+                        </span>
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                <path d="M7 8h10M7 12h10M7 16h6"/>
+                            </svg>
+                            Cornell MS
+                        </span>
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                            </svg>
+                            Kellogg MBA
+                        </span>
+                    </div>
+                    <p>Two-sport varsity athlete at UChicago. Two graduate degrees (Cornell MS, Kellogg MBA) while leading enterprise transformations. I've built a career on exceptional work with limited time and resources.</p>
+                    <div class="client-impact">→ I move fast, prioritize ruthlessly, and deliver on aggressive timelines.</div>
+                </div>
+                <div class="differentiator-card">
+                    <h3>Rapid Skill Acquisition</h3>
+                    <div class="badges-container">
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 7h16M4 12h16M4 17h16"/>
+                                <path d="M9 3v18M15 3v18"/>
+                            </svg>
+                            Tableau
+                        </span>
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/>
+                            </svg>
+                            Python
+                        </span>
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                                <polyline points="2 17 12 22 22 17"/>
+                                <polyline points="2 12 12 17 22 12"/>
+                            </svg>
+                            Strategy
+                        </span>
+                    </div>
+                    <p>When a problem requires new expertise, I build it—whether mastering analytical tools, navigating unfamiliar industries, or leading teams through uncharted territory.</p>
+                    <div class="client-impact">→ You get adaptable problem-solving, not cookie-cutter frameworks.</div>
+                </div>
+                <div class="differentiator-card">
+                    <h3>Small Town Roots, World-Class Standards</h3>
+                    <div class="badges-container">
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                            Small Town
+                        </span>
+                        <span class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 21h18"/>
+                                <path d="M5 21V7l8-4v18"/>
+                                <path d="M19 21V11l-6-4"/>
+                                <path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/>
+                            </svg>
+                            Elite Institutions
+                        </span>
+                    </div>
+                    <p>Growing up far from elite institutions taught me that opportunity is earned, not given. That perspective drives my work: every engagement is mission-critical.</p>
+                    <div class="client-impact">→ You get a partner who treats your success as personal.</div>
                 </div>
             </div>
-
-            <div class="timeline-item">
-                <div class="timeline-year">2021–2025</div>
-                <div class="timeline-content">
-                    <h3>Full-Time Professional + Student</h3>
-                    <p><strong>Completed Two Graduate Degrees</strong> from top-ranked programs while leading enterprise-scale initiatives at McMaster-Carr.</p>
-                    <div class="drive-stat">M.S. in Business Analytics (Cornell, 2023) -  MBA (Kellogg, 2025) -  Multiple promotions earned along the way</div>
+            
+            <div class="approach-principles">
+                <h3>How I Work</h3>
+                <div class="principles-grid">
+                    <div class="principle">
+                        <h4>Clarity from Complexity</h4>
+                        <p>Translate messy problems into executable plans</p>
+                    </div>
+                    <div class="principle">
+                        <h4>Outcomes Over Activity</h4>
+                        <p>Focus relentlessly on what moves the needle</p>
+                    </div>
+                    <div class="principle">
+                        <h4>Partnership, Not Prescription</h4>
+                        <p>Listen first, then bring expertise and rigor</p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="drive-principles">
-            <div class="principle">
-                <h4>Excellence as a Standard</h4>
-                <p>“Good enough” isn’t the goal. Every project is an opportunity to raise the bar—for myself and my teams.</p>
-            </div>
-            <div class="principle">
-                <h4>Relentless Learning</h4>
-                <p>I don’t wait for the right moment or permission to grow. When a challenge calls for new expertise, I build it fast.</p>
-            </div>
-            <div class="principle">
-                <h4>Curiosity That Drives Clarity</h4>
-                <p>I thrive on untangling complex, ambiguous problems—and turning them into actionable insight.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!--  would be interesting to add in something about small town to world class institutes. Persepctive and drive to get things over the finish line. 
-      
-    would be cool to add clifton strengths section (I think)
-    
-    what is the story of me, yano. how to display that on a page. what do i want you to know about me. I am going to get an excellent outcome. I am super smart. I am a hard worker. I am reliable. I have integrity
-    
-    outside of work -- traveling, national parks, climbing, hiking and could add in photos I have taken. -->
+    </section>
 
     <!-- About Section -->
     <section class="about" id="about">
